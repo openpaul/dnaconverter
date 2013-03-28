@@ -11,9 +11,22 @@ The system is quiet easy to understand and follows some guidelines:
 3. Ternarydata can be convertet into DNA using the base AGTC as code:
 
 Table:
-# _____________
-#  |_0_|_1_|_2_| 
-#A | G | C | T |
-#G | C | T | A |
-#C | T | A | G |
-#T |_A_|_G_|_C_|
+  ____________
+  |_0_|_1_|_2_| 
+A | G | C | T |
+G | C | T | A |
+C | T | A | G |
+T |_A_|_G_|_C_|
+4. The first letter of each sequenz is beeing ignored. And it should be an A, by convention.
+
+The meaning of each base changes depending on the preceding base. in that manner there wont be any double base pairs, because with the todays technology we are not able to read DNA with double bases.
+
+Example
+-------
+
+We want to read the file "test.txt"
+We read it byte for byte and retrive for each byte the int that represents the byte.
+For Example: the byte 10101100 is the same as 172
+(1*2⁷+0*2⁶+1*2⁵...)
+Now we can represent this number to the base of 3 by using the tenary system:
+
