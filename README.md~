@@ -2,8 +2,6 @@ DNAconverter
 ============
 The DNAconverter enables you to convert any digital file into a sequenz of DNA-base
 
-Right now we are able to convert textfiles into DNA and back.
-
 The system is quiet easy to understand and follows some guidelines:
 
 1. Digital files can be seen as binary data (e.g. 110101010...)
