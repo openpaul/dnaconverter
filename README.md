@@ -67,7 +67,7 @@ tutorial
 1. Download the zipped branch and unzip it
 2. Have python3 installed
 3. open terminal in the diretory with the scripts includet
-4. Copy any files into the input folder.
+4. Copy any files into the input folder (no folders!).
 	- remove old files out of the other folders
 	- try it out with small files first < 1Mb
 5. run dnaEncode.py
