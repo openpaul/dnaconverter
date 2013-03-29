@@ -1,6 +1,6 @@
 DNAconverter
 ============
-The DNAconverter shell enable you to convert any digital file into a sequenz of DNA
+The DNAconverter enables you to convert any digital file into a sequenz of DNA
 
 Right now we are able to convert textfiles into DNA and back.
 
@@ -49,7 +49,7 @@ Roadmap
 1. To make script convert back and foreward every possible file
 	- Done (28.03.2013): fixed error with integers > 242
 	- Performance is very bad!
-		- the performance improved for the encoding. Right now the reading of the bytes take time. The conversion into DNA from the numers is pretty fast
+		- the performance improved a lot. Its now possible to encode or decode any file in a reasonable time. Just the encoded file is 6 times bigger because of the method used. Could be zipped in the future
 2. Include Filename and some kind of indentifier
 3. Split the string so they actually could be transcripted
 
