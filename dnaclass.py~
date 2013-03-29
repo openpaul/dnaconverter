@@ -50,6 +50,7 @@ class createdna:
 			while byte:
 				#here we got the bytes
 				for item in bytes(byte):
+					#print(item)
 					#each int now needs to be calculatet as ternary number
 					# so we divide trough3 and as our new format will have the base of 6 we will have to make 6 iterations until there is no rest
 					dnaint = item
