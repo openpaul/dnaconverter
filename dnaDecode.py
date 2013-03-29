@@ -1,35 +1,37 @@
-# conversion from DNA
-retrive = {"AG":0,"GC":0,"CT":0,"TA":0,
-		   "AC":1,"GT":1,"CA":1,"TG":1,
-		   "AT":2,"GA":2,"CG":2,"TC":2}
-
+import os
 
 class decodedna:
-	def __init__(self):
+	def __init__(self,filename):
 	#erstmal datei einlesen
-		self.readfile()
+		print("We decode")
+		self.readfile(filename)
+		print("We are done")
 
-	def readfile(self):
-		global retrive
+	def readfile(self,filename):
+		# conversion from DNA
+		retrive = {"AG":0,"GC":0,"CT":0,"TA":0,
+				   "AC":1,"GT":1,"CA":1,"TG":1,
+				   "AT":2,"GA":2,"CG":2,"TC":2}
+
 		frame = bytearray()
-		with open("data/dna_output.fasta", "r") as in_file:
-			n = in_file.read(1)	
-			last = n
+		inputdir = "inputencoded/%s" % (filename)
+		with open(inputdir, "r") as in_file:
+			n = in_file.read()	
+			last = n[0:1] #first base
 			i = 0
 			c = 0 # every trimer has 6 values
 			
 			byteint = 0 #the actual encodet byte		
-
-			while n:
-				#print(n)
+			
+			for base in n:
+				#print(base)
 				#erster buchstabe und zeilenumbruch wird ignoriert
-				if( i > 0 and n != "\n"):
-					dimer = last + n
+				if( i > 0 and base != "\n"):
+					dimer = last + base
 					value = retrive[dimer]
 					#print(c)
-					last = n
+					last = base
 					#print(value)
-					
 					if(c < 6):
 						#print(value)
 						byteint = byteint + value*(3**c)
@@ -41,15 +43,17 @@ class decodedna:
 					#ausgabe des int					
 					if(c == 6):
 						#print("done")
-						print(byteint)
+						#print(byteint)
 						#print(bytes(byteint))
 						frame.append(byteint)
 				i = i + 1
-				n = in_file.read(1)
 
-			self.createfile(frame)
-	def createfile(self,frame):
-		with open("data/output.jpg", "wb") as out_file:
+			self.createfile(frame,filename)
+	def createfile(self,frame,filename):
+		outputdir = "output/%s" % (filename)
+		with open(outputdir, "wb") as out_file:
 			out_file.write(frame)
 
-decodedna()
+
+for files in os.listdir("inputencoded"):
+	decodedna(files)

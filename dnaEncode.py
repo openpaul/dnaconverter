@@ -1,10 +1,46 @@
-# some variables
-hugetryte = ""
-DNA       = "A"
+import os
 
-#conversion to DNA
-# lastlettervalue:letter
-next = {"A0":"G",
+class encodedna:
+	def __init__(self, filename):
+		hugetryte = list()
+		print("Initiate reading")
+		hugetryte = self.readfile(filename,hugetryte)
+		print("File has been readen")
+		self.converttryte2DNA(filename,hugetryte)
+		print("We are done")
+
+########################################################
+# this opens any file and reads its bytes
+	def readfile(self,filename,hugetryte):
+	
+		#open file trough path in binary mode "rb"
+		filepath = "input/%s" % (filename)
+		with open(filepath, "rb") as in_file:
+
+			#load the bytes into array
+			myfilearray = in_file.read()
+
+			#loop over the array of bytes
+			for item in myfilearray:
+					#each byte as its integer now needs to be calculatet as ternary number
+					# so we divide trough 3 and as our new format will have the base of 3 we will have to make 6 iterations so we can encode numbers until 255
+					dnaint = item    # copy the integer
+					rest   = dnaint  # the rest by start is the numer
+					i      = 6       # the number of iterations
+					ternary = list() # ternary is the list we save our "trytes" in
+										
+					while i > 0:
+						rest   = dnaint%3    # the rest is interesting
+						dnaint = dnaint//3   # the integer to pass on
+						i      = i - 1       # next iteration
+						hugetryte.append(rest) # the rest gets saved
+
+		return hugetryte
+
+
+	def converttryte2DNA(self,filename,hugetryte):
+		#global DNA
+		next = {"A0":"G",
 		"A1":"C",
 		"A2":"T",
 		"G0":"C",
@@ -15,81 +51,21 @@ next = {"A0":"G",
 		"C2":"G",
 		"T0":"A",
 		"T1":"G",
-		"T2":"C"}
-
-class encodedna:
-	def __init__(self):
-	#erstmal datei einlesen
-		self.readfile()
-
-	# this opens any file and converts it into DNA
-	def readfile(self):
-		global hugetryte
-		global DNA
-		
-		#open file trough path
-		with open("data/input.jpg", "rb") as in_file:
-			#data = in_file.read()
-			#print("this file has bytes:")			
-			#print(len(data))
-
-			# 1 byte a time
-			byte = in_file.read(1)
-			while byte:
-				#here we got the bytes
-				for item in bytes(byte):
-
-					#each int now needs to be calculatet as ternary number
-					# so we divide trough3 and as our new format will have the base of 6 we will have to make 6 iterations until there is no rest
-					dnaint = item
-					rest   = dnaint
-					i      = 6 #number of iterations
-					ternary = list()
-					while i > 0:
-						number = dnaint//3
-						rest   = dnaint%3
-						dnaint = number
-						i      = i - 1 # next iteration
-						ternary.append(rest)
-						#print(rest)
-					print(item)
-					self.createtryte(ternary)
-				# 1 byte a time			
-				byte = in_file.read(1)	
-				
-		self.converttryte2DNA(hugetryte)
-		self.createfasta(DNA)
-		
-	# this function creates little trytes and then appends them to the huge on
-	# every tryte has 6 number from 0,1,2 (e.g 102010 021011 ...... ......)
-	def createtryte(self, ternary):
-		tryte = str()
-		for n in ternary:
-			tryte += str(n)
-		self.createmegatryte(tryte)
-
-	# this function creates one huge tryte
-	def createmegatryte(self,tryte):
-		global hugetryte
-		hugetryte += tryte
-
-	def converttryte2DNA(self,ternary):
-		global DNA
-		global next		
+		"T2":"C"}		
 		last = "A"
-		length = len(ternary)
-		a = 0
-		while length > 0:
-			
-			dimer = last + ternary[a:a+1]
-			last = next[dimer]
-			DNA += last
-			#print(last);
-			length = length -1
-			a      = a + 1
-	def createfasta(self,DNA):
-		with open("data/dna_output.fasta", "w") as out_file:
-			out_file.write(DNA)
-		
-encodedna()
+		outputdir = "inputencoded/%s" % (filename)
+		with open(outputdir, "w") as out_file:
+			out_file.write("A"); #The first letter has to be an A, by convention
+		with open(outputdir, "a") as out_file:		
+			for n in hugetryte:
+				dimer  = "%s%s" % (last,n)
+				last   = next[dimer]
+				#DNA  = "%s%s" % (DNA, last)
+				out_file.write(last);
+
+#encodedna()
+
+#os.chdir("input")
+for files in os.listdir("input"):
+	encodedna(files)
 

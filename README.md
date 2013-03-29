@@ -49,6 +49,7 @@ Roadmap
 1. To make script convert back and foreward every possible file
 	- Done (28.03.2013): fixed error with integers > 242
 	- Performance is very bad!
+		- the performance improved for the encoding. Right now the reading of the bytes take time. The conversion into DNA from the numers is pretty fast
 2. Include Filename and some kind of indentifier
 3. Split the string so they actually could be transcripted
 
