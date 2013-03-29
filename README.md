@@ -16,12 +16,13 @@ The conversion is done using this table:
 
 
 The meaning of each base changes depending on the preceding base. in that manner there wont be any double base pairs, because with the todays technology we are not able to read DNA with double bases.
+
 | Values    | 0 | 1 | 2 |
-|-----------|---|---|---|
+|-----------|:---:|:---:|:---:|
 |*preciding:* A | G | C | T |
 |*preciding:* G | C | T | A |
 |*preciding:* C | T | A | G |
-|*preciding:* T |_A_|_G_|_C_|
+|*preciding:* T | A | G | C |
 
 4. The first letter of each sequenz is beeing ignored. And it should be an A, by convention.
 

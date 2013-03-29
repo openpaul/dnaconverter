@@ -10,16 +10,21 @@ The system is quiet easy to understand and follows some guidelines:
 2. Binary data can be retrived and convertet into ternary data
 3. Ternarydata can be convertet into DNA using the base AGTC as code:
 
-Table:
-  ____________
-  |_0_|_1_|_2_| 
-A | G | C | T |
-G | C | T | A |
-C | T | A | G |
-T |_A_|_G_|_C_|
-4. The first letter of each sequenz is beeing ignored. And it should be an A, by convention.
+The conversion is done using this table:
+
+
+
 
 The meaning of each base changes depending on the preceding base. in that manner there wont be any double base pairs, because with the todays technology we are not able to read DNA with double bases.
+
+| Values    | 0 | 1 | 2 |
+|-----------|:---:|:---:|:---:|
+|*preciding:* A | G | C | T |
+|*preciding:* G | C | T | A |
+|*preciding:* C | T | A | G |
+|*preciding:* T |_A_|_G_|_C_|
+
+4. The first letter of each sequenz is beeing ignored. And it should be an A, by convention.
 
 Example
 -------
