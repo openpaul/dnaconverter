@@ -1,3 +1,9 @@
+# conversion from DNA
+retrive = {"AG":0,"GC":0,"CT":0,"TA":0,
+		   "AC":1,"GT":1,"CA":1,"TG":1,
+		   "AT":2,"GA":2,"CG":2,"TC":2}
+
+
 class decodedna:
 	def __init__(self):
 	#erstmal datei einlesen
@@ -6,7 +12,7 @@ class decodedna:
 	def readfile(self):
 		global retrive
 		frame = bytearray()
-		with open("dna.fasta", "r") as in_file:
+		with open("data/dna_output.fasta", "r") as in_file:
 			n = in_file.read(1)	
 			last = n
 			i = 0
@@ -41,7 +47,7 @@ class decodedna:
 
 			self.createfile(frame)
 	def createfile(self,frame):
-		with open("testout.txt", "wb") as out_file:
+		with open("data/output.txt", "wb") as out_file:
 			out_file.write(frame)
 
 decodedna()

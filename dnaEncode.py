@@ -17,11 +17,6 @@ next = {"A0":"G",
 		"T1":"G",
 		"T2":"C"}
 
-# conversion from DNA
-retrive = {"AG":0,"GC":0,"CT":0,"TA":0,
-		   "AC":1,"GT":1,"CA":1,"TG":1,
-		   "AT":2,"GA":2,"CG":2,"TC":2}
-
 class encodedna:
 	def __init__(self):
 	#erstmal datei einlesen
@@ -32,7 +27,7 @@ class encodedna:
 		global hugetryte
 		global DNA
 		#open file trough path
-		with open("test.txt", "rb") as in_file:
+		with open("data/input.txt", "rb") as in_file:
 			byte = in_file.read(1)	
 			while byte:
 				#here we got the bytes
@@ -83,7 +78,7 @@ class encodedna:
 			length = length -1
 			a      = a + 1
 	def createfasta(self,DNA):
-		with open("dna.fasta", "w") as out_file:
+		with open("data/dna_output.fasta", "w") as out_file:
 			out_file.write(DNA)
 		
 encodedna()
