@@ -30,3 +30,13 @@ For Example: the byte 10101100 is the same as 172
 (1*2⁷+0*2⁶+1*2⁵...)
 Now we can represent this number to the base of 3 by using the tenary system:
 
+
+Roadmap
+-------
+1. To make script convert back and foreward every possible file
+2. Include Filename and some kind of indentifier
+3. Split the string so they actually could be transcripted
+
+Goal
+----
+Actually produce some DNA and reverse transcript it back, so we can see if it is possible.
