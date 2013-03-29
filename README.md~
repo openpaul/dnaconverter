@@ -44,4 +44,3 @@ Actually produce some DNA and reverse transcript it back, so we can see if it is
 Dependecies
 -----------
 Depends on python3
-Tested on Ubuntu 12_04

@@ -84,7 +84,7 @@ class encodedna:
 			dimer = last + ternary[a:a+1]
 			last = next[dimer]
 			DNA += last
-			#print(last);
+			print(last);
 			length = length -1
 			a      = a + 1
 	def createfasta(self,DNA):
