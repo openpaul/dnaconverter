@@ -34,8 +34,6 @@ Now we can represent this number to the base of 3 by using the tenary system:
 Roadmap
 -------
 1. To make script convert back and foreward every possible file
-	- Done (28.03.2013): fixed error with integers > 242
-	- Performance is very bad!
 2. Include Filename and some kind of indentifier
 3. Split the string so they actually could be transcripted
 
