@@ -49,11 +49,14 @@ Roadmap
 	- Performance is very bad!
 		- the performance improved a lot. Its now possible to encode or decode any file in a reasonable time. Just the encoded file is 6 times bigger because of the method used. Could be zipped in the future
 2. Include Filename and some kind of indentifier
+	- the first 64 bytes of each encodet file is the filename filled up with " "(spaces) until the end (so the maxlength of each filename would be 64 symbols!). this seems a lot, 384 bases are used for the filename. But we life in the 21th century and we do  not want o worry if our filename is to long or has some rare symbols in it. For that reason we use utf-8 encodeing for the filename
 3. Split the string so they actually could be transcripted
 
 Goal
 ----
 Actually produce some DNA and reverse transcript it back, so we can see if it is possible.
+I read in some article in "Spektrum der Wissenschaft"  about some scientist, who actually did the same thing and thought by myself: "how hard can it be?"
+Thats why I did this project.
 
 Dependecies
 -----------
