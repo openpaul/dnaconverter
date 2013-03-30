@@ -1,4 +1,7 @@
 import os
+import datetime # just for testingpurpose
+
+start = datetime.datetime.now() # get the starttime
 
 class decodedna:
 	def __init__(self,filename):
@@ -66,3 +69,13 @@ class decodedna:
 
 for files in os.listdir("inputencoded"):
 	decodedna(files)
+
+
+
+print("")
+stop = datetime.datetime.now()
+seconds = stop-start  
+print("Job took that long:")
+print(seconds)
+print("")
+
