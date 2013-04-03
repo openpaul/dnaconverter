@@ -79,7 +79,8 @@ class encodedna:
 				"C2":"A",
 				"T0":"A",
 				"T1":"C",
-				"T2":"G"}		
+				"T2":"G"}	
+		last = "A"	
 		outputdir = "inputencoded/%s.fasta" % (filename)
 		with open(outputdir, "w") as out_file:
 			out_file.write("A"); #The first letter has to be an A (in this software)
