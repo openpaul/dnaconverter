@@ -45,6 +45,7 @@ class encodedna:
 			myfilearray = in_file.read()
 			hugetryte = self.bytearrayconversion(myfilearray,hugetryte)
 			return hugetryte
+
 	
 	def bytearrayconversion(self,bytearray,hugetryte):
 		#loop over the array of bytes
@@ -80,14 +81,20 @@ class encodedna:
 				"T0":"A",
 				"T1":"C",
 				"T2":"G"}		
-		outputdir = "inputencoded/%s.fasta" % (filename)
+
+		outputdir = "inputencoded/%s.dna" % (filename)
 		with open(outputdir, "w") as out_file:
-			out_file.write("A"); #The first letter has to be an A (in this software)
-		with open(outputdir, "a") as out_file:		
+			out_file.write(""); #We empty the file or create it
+		with open(outputdir, "a") as out_file:
+			i = 0	
 			for n in hugetryte:
+				if(i < 6): # the first byte is encodet believing the las was an A
+					last = "A"
+					i = i + 1
+					print(n)
+					print(last)
 				dimer  = "%s%s" % (last,n)
 				last   = next[dimer]
-				#DNA  = "%s%s" % (DNA, last)
 				out_file.write(last);
 
 

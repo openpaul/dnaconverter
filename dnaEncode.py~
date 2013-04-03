@@ -82,7 +82,7 @@ class encodedna:
 				"T2":"G"}		
 		outputdir = "inputencoded/%s.fasta" % (filename)
 		with open(outputdir, "w") as out_file:
-			out_file.write("A"); #The first letter has to be an A (in this software)
+			out_file.write("A"); #The first letter has to be an A, by convention
 		with open(outputdir, "a") as out_file:		
 			for n in hugetryte:
 				dimer  = "%s%s" % (last,n)

@@ -36,9 +36,9 @@ class decodedna:
 			return (realfilename.decode("utf-8").strip())
 				
 	def decode(self, basestr, frame, i): # i is needte to find the last base
-		retrive = {"AG":0,"GC":0,"CT":0,"TA":0,
-				   "AC":1,"GT":1,"CA":1,"TG":1,
-				   "AT":2,"GA":2,"CG":2,"TC":2}
+		retrive = {"AC":0,"CG":0,"GT":0,"TA":0,
+				   "AG":1,"CT":1,"GA":1,"TC":1,
+				   "AT":2,"CA":2,"GC":2,"TG":2}
 		last = basestr[0:1] #first base
 		c = 0 # every trimer has 6 values
 		byteint = 0 #the actual encodet byte

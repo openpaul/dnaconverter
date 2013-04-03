@@ -71,8 +71,8 @@ tutorial
 3. open terminal in the diretory with the scripts includet
 4. Copy any files into the input folder (no folders, just files!).
 	- remove old files out of the other folders
-	- try it out with small files first < 1Mb (I've already converted > 1GB)
+	- try it out with small files first < 1Mb
 5. run dnaEncode.py
-6. open any file in the "inputencoded"-folder with any editor to see the DNA-sequenz (Caution, they are 6 times the size now!)
+6. open any file in the ""inputencoded"-folder with any editor to see the DNA-sequenz
 7. run dnaDecode.py to decode the files
 8. see the decoded files in the output-dir 
