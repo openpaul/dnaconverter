@@ -14,7 +14,7 @@ The system is quiet easy to understand and follows some guidelines:
 4. The first letter of each sequenz is beeing ignored. In this software we use an "A"
 
 
-The conversion 
+Conversion 
 --------------
 The meaning of each base changes depending on the preceding base. In that manner there wont be any double base pairs, because with the todays technology we are not able to read DNA with double bases.
 
@@ -64,7 +64,7 @@ Depends on python3
 Tested on Ubuntu 12_04
 
 
-tutorial
+Tutorial
 --------
 1. Download the zipped branch and unzip it
 2. Have python3 installed
