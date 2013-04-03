@@ -60,8 +60,9 @@ Roadmap
 
 Dependecies
 -----------
--Depends on python3
--Tested on Ubuntu 12_04
+
+- Depends on python3
+- Tested on Ubuntu 12_04
 
 
 Tutorial
